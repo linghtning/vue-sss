@@ -1,0 +1,44 @@
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+@mixin ellipsis($line: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin vg-color($color, $blod: bold) {
+  font-weight: $blod;
+  background: linear-gradient(180deg, #fff 0%, $color 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
