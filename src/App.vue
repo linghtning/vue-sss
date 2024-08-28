@@ -9,7 +9,7 @@ const a = 20
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125">
 
-    <div class="wrapper">
+    <div h100 w100 p10 class="wrapper">
       <HelloWorld msg="You did it!" />
       {{ a }}
       <nav>
@@ -30,6 +30,7 @@ const a = 20
 header {
   height: 100px;
   max-height: 100vh;
+  padding: 10px;
   line-height: 1.5;
   color: red;
 }
