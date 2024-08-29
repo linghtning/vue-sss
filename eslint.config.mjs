@@ -23,5 +23,10 @@ export default antfu({
     '.local',
     '/bin',
     'Dockerfile',
+    'stats.html',
   ],
+  rules: {
+    'regexp/no-unused-capturing-group': 'off',
+    'node/prefer-global/process': 'off',
+  },
 })
