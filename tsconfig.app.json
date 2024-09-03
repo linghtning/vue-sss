@@ -8,6 +8,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "src/**/*.vue", "types", "build"],
+  "include": ["src/**/*", "src/**/*.vue", "types", "build", "mock"],
   "exclude": ["src/**/__tests__/*"]
 }

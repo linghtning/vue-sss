@@ -20,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, root)
   const viteEnv: any = wrapperEnv(env)
   return {
-    base: viteEnv.VITE_PUBLIC_PATH,
+    // base: viteEnv.VITE_PUBLIC_PATH,
     plugins: createVitePlugin(isBuild, viteEnv),
     resolve: {
       alias: {
@@ -28,33 +28,33 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     build: configViteBuild(),
-    optimizeDeps: {
-      entries: ['src/**/*.{ts,tsx,vue}'],
-      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
-      include: [
-        // 'vue',
-        // '@vue/runtime-core',
-        // 'vue-router',
-        // 'pinia',
-        // 'axios',
-        // 'echarts/core',
-        // 'echarts/charts',
-        // 'echarts/components',
-        // 'echarts/renderers',
-        // 'lodash-es',
-        // 'vue-request',
-        // 'dayjs',
-        // 'element-plus/es/components/date-picker/style/css',
-        // 'element-plus/es/components/pagination/style/css',
-        // 'element-plus/es/components/form/style/css',
-        // 'element-plus/es/components/input/style/css',
-        // 'element-plus/es/components/form-item/style/css',
-        // 'element-plus/es/components/select/style/css',
-        // 'element-plus/es/components/option/style/css',
-        // 'element-plus/es/components/tooltip/style/css',
-        // 'swiper/vue',
-      ],
-    },
+    // optimizeDeps: {
+    //   entries: ['src/**/*.{ts,tsx,vue}'],
+    //   // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
+    //   include: [
+    //     // 'vue',
+    //     // '@vue/runtime-core',
+    //     // 'vue-router',
+    //     // 'pinia',
+    //     // 'axios',
+    //     // 'echarts/core',
+    //     // 'echarts/charts',
+    //     // 'echarts/components',
+    //     // 'echarts/renderers',
+    //     // 'lodash-es',
+    //     // 'vue-request',
+    //     // 'dayjs',
+    //     // 'element-plus/es/components/date-picker/style/css',
+    //     // 'element-plus/es/components/pagination/style/css',
+    //     // 'element-plus/es/components/form/style/css',
+    //     // 'element-plus/es/components/input/style/css',
+    //     // 'element-plus/es/components/form-item/style/css',
+    //     // 'element-plus/es/components/select/style/css',
+    //     // 'element-plus/es/components/option/style/css',
+    //     // 'element-plus/es/components/tooltip/style/css',
+    //     // 'swiper/vue',
+    //   ],
+    // },
     server: {
       // host: '0.0.0.0',
       hmr: true,
@@ -65,9 +65,12 @@ export default defineConfig(({ command, mode }) => {
     css: {
       preprocessorOptions: {
         // 全局样式变量预注入
-        scss: {
-          additionalData: `@use "./src/styles/variables.scss" as *;
-                           @use "./src/styles/mixin.scss" as *;`,
+        // scss: {
+        //   additionalData: `@use "./src/styles/variables.scss" as *;
+        //                    @use "./src/styles/mixin.scss" as *;`,
+        //   javascriptEnabled: true,
+        // },
+        less: {
           javascriptEnabled: true,
         },
       },

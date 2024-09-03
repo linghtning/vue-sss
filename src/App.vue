@@ -1,15 +1,15 @@
 <script setup lang='ts'>
-const num = ref(20)
 </script>
 
 <template>
   <div>
-    <a-button>搜索</a-button>
-    {{ num }}
-    <router-view />
+    <a-button type="primary">
+      按钮
+    </a-button>
+    <BBq name="嘿嘿" />
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang='less' scoped>
 
 </style>

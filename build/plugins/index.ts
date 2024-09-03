@@ -2,11 +2,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import type { PluginOption } from 'vite'
 
-import { configAutoImportPlugin } from './autoImport'
-import { configAutoComponentPlugin } from './component'
 import { configVueDevToolsPlugin } from './devTools'
 import { configMockPlugin } from './mock'
-import { configStyleImportPlugin } from './styleImport'
 import { configSvgLoaderPlugin } from './svgLoader'
 import { configUnocssPlugin } from './unocss'
 import { configVisualizePlugin } from './visualizer'
@@ -16,10 +13,10 @@ export function createVitePlugin(isBuild: boolean, _: any) {
   const plugins: PluginOption[] = [
     vue(),
     vueJsx(),
-    configAutoImportPlugin(),
-    configAutoComponentPlugin(),
+    // configAutoComponentPlugin(),
+    // configAutoImportPlugin(),
     configVueDevToolsPlugin(),
-    configStyleImportPlugin(),
+    // configStyleImportPlugin(),
     configSvgLoaderPlugin(),
     configUnocssPlugin(),
   ]
