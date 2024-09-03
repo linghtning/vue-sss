@@ -5,6 +5,7 @@ import { asyncLayoutImport, asyncViewImport } from '@/router/helper/asyncCompone
 const admin: RouteRecordRaw = {
   path: '/',
   name: 'admin',
+  redirect: '/test',
   meta: {
     title: 'Admin',
     public: false,

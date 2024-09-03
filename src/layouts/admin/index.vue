@@ -80,7 +80,7 @@ function onLogoAreaClick() {
 </script>
 
 <template>
-  <div class="container admin-layout" :class="{ 'mix-menu-mode': menuMode === MenuModeEnum.MIX }">
+  <div class="mcontainer admin-layout" :class="{ 'mix-menu-mode': menuMode === MenuModeEnum.MIX }">
     <aside
       v-show="menuMode !== MenuModeEnum.TOP && showSider"
       class="admin-layout-aside"

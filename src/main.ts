@@ -23,7 +23,7 @@ function bootstrap() {
 
   setupGlobDirectives(app)
 
-  setupLibrary(app)
+  setupLibrary()
 
   app.mount('#app')
 }
