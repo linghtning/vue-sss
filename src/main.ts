@@ -1,10 +1,31 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import App from './App.vue'
-import router from '@/router'
-import 'virtual:uno.css'
+import '@/design/index.less'
 
-const app = createApp(App)
-app.use(createPinia())
-app.use(router)
-app.mount('#app')
+import 'virtual:svg-icons-register'
+
+import { createApp } from 'vue'
+import App from './App.vue'
+import { setupStore } from '@/store'
+import { setupRouter } from '@/router'
+import { registerGlobComp } from '@/components/registerGlobComp'
+import { setupGlobDirectives } from '@/directives'
+import { setupLibrary } from '@/logics/setupLibrary'
+
+import 'virtual:uno.css' // uno.css
+
+function bootstrap() {
+  const app = createApp(App)
+
+  setupStore(app)
+
+  setupRouter(app)
+
+  registerGlobComp(app)
+
+  setupGlobDirectives(app)
+
+  setupLibrary(app)
+
+  app.mount('#app')
+}
+
+bootstrap()

@@ -32,5 +32,6 @@ export default antfu({
     'jsdoc/require-returns-description': 'off',
     'ts/ban-ts-comment': 'off',
     'eslint-comments/no-unlimited-disable': 'off',
+    'ts/no-unsafe-function-type': 'off',
   },
 })

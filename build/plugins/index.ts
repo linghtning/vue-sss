@@ -8,17 +8,22 @@ import { configSvgLoaderPlugin } from './svgLoader'
 import { configUnocssPlugin } from './unocss'
 import { configVisualizePlugin } from './visualizer'
 import { configCompressPlugin } from './compress'
+import { configSvgIconsPlugin } from './svgSprite'
+import { configStyleImportPlugin } from './styleImport'
+import { configAutoImportPlugin } from './autoImport'
+import { configAutoComponentPlugin } from './component'
 
 export function createVitePlugin(isBuild: boolean, _: any) {
   const plugins: PluginOption[] = [
     vue(),
     vueJsx(),
-    // configAutoComponentPlugin(),
-    // configAutoImportPlugin(),
+    configAutoComponentPlugin(),
+    configAutoImportPlugin(),
     configVueDevToolsPlugin(),
-    // configStyleImportPlugin(),
+    configStyleImportPlugin(),
     configSvgLoaderPlugin(),
     configUnocssPlugin(),
+    configSvgIconsPlugin(),
   ]
 
   // 启用mock

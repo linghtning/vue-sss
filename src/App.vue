@@ -1,15 +1,11 @@
-<script setup lang='ts'>
+<script setup lang="ts">
+import zhCN from 'ant-design-vue/es/locale/zh_CN'
 </script>
 
 <template>
-  <div>
-    <a-button type="primary">
-      按钮
-    </a-button>
-    <BBq name="嘿嘿" />
-  </div>
+  <a-config-provider :locale="zhCN">
+    <router-view />
+  </a-config-provider>
 </template>
 
-<style lang='less' scoped>
-
-</style>
+<style lang="less" scoped></style>

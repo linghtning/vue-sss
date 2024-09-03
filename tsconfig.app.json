@@ -5,8 +5,10 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+      "/#/*": ["types/*"]
+    },
+    "types": ["vite/client"]
   },
   "include": ["src/**/*", "src/**/*.vue", "types", "build", "mock"],
   "exclude": ["src/**/__tests__/*"]

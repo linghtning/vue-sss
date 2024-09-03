@@ -1,4 +1,6 @@
 // Read all environment variable configuration files to process.env
+import { resolve } from 'node:path'
+
 export function wrapperEnv(envConf: any) {
   const ret: any = {}
 
@@ -26,4 +28,8 @@ export function wrapperEnv(envConf: any) {
     }
   }
   return ret
+}
+
+export function pathResolve(dir: string) {
+  return resolve(process.cwd(), dir)
 }
