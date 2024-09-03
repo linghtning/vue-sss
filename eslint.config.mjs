@@ -28,5 +28,9 @@ export default antfu({
   rules: {
     'regexp/no-unused-capturing-group': 'off',
     'node/prefer-global/process': 'off',
+    'jsdoc/check-param-names': 'off',
+    'jsdoc/require-returns-description': 'off',
+    'ts/ban-ts-comment': 'off',
+    'eslint-comments/no-unlimited-disable': 'off',
   },
 })
