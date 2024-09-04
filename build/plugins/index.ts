@@ -2,6 +2,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import type { PluginOption } from 'vite'
 
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { configVueDevToolsPlugin } from './devTools'
 // import { configMockPlugin } from './mock'
 import { configSvgLoaderPlugin } from './svgLoader'
@@ -17,6 +18,7 @@ export function createVitePlugin(isBuild: boolean, _: any) {
   // 基础配置
   const plugins: PluginOption[] = [
     vue(),
+    vueSetupExtend(),
     vueJsx(),
     configAutoComponentPlugin(),
     configAutoImportPlugin(),

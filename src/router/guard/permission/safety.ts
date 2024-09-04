@@ -1,10 +1,10 @@
 import type { RouteLocationNormalized, Router } from 'vue-router'
 
-import { useUserStore } from '/@/store/modules/user'
-import { usePermissionStoreWithOut } from '/@/store/modules/permission'
-import { BasicPageEnum, ExceptionPageEnum } from '/@/enums/pageEnum'
-import { getMenuFirstLeafNode } from '/@/logics/helper/layout'
-import { useLayoutStore } from '/@/store/modules/layout'
+import { useUserStore } from '@/store/modules/user'
+import { usePermissionStoreWithOut } from '@/store/modules/permission'
+import { BasicPageEnum, ExceptionPageEnum } from '@/enums/pageEnum'
+import { getMenuFirstLeafNode } from '@/logics/helper/layout'
+import { useLayoutStore } from '@/store/modules/layout'
 
 const permissionStore = usePermissionStoreWithOut()
 

@@ -1,9 +1,9 @@
 <script setup lang="ts" name="LTopMenu">
 import TreeMenu from '../TreeMenu/index.vue'
-import { useLayoutStore } from '/@/store/modules/layout'
-import { MenuModeEnum } from '/@/enums/layoutEnum'
-import { goMenuFirstLeafNode, handleGoFromMenuKey } from '/@/logics/helper/layout'
-import layoutSetting from '/@/settings/layoutSetting'
+import { useLayoutStore } from '@/store/modules/layout'
+import { MenuModeEnum } from '@/enums/layoutEnum'
+import { goMenuFirstLeafNode, handleGoFromMenuKey } from '@/logics/helper/layout'
+import layoutSetting from '@/settings/layoutSetting'
 
 import type { MenuTree } from '/#/store'
 

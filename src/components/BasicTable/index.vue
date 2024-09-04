@@ -1,7 +1,7 @@
 <script setup lang="ts" name="BasicTable">
 import { useWindowSize } from '@vueuse/core'
 
-const props = defineProps({
+defineProps({
   paginationData: {
     type: Object as PropType<Recordable>,
     default() {

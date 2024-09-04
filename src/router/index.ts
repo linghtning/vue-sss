@@ -3,7 +3,7 @@ import type { App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
 import { setupRouterGuard } from './guard'
-import { getEnv } from '/@/utils/env'
+import { getEnv } from '@/utils/env'
 
 // router instance
 export const router = createRouter({

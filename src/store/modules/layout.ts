@@ -2,10 +2,10 @@ import type { LayoutState, TabInfo } from '/#/store'
 import type { RouteLocationNormalized } from 'vue-router'
 
 import { defineStore } from 'pinia'
-import layoutSetting from '/@/settings/layoutSetting'
-import { generateMenuPath } from '/@/logics/helper/layout'
-import { router } from '/@/router'
-import { BasicPageEnum } from '/@/enums/pageEnum'
+import layoutSetting from '@/settings/layoutSetting'
+import { generateMenuPath } from '@/logics/helper/layout'
+import { router } from '@/router'
+import { BasicPageEnum } from '@/enums/pageEnum'
 
 export const useLayoutStore = defineStore({
   id: 'layout',

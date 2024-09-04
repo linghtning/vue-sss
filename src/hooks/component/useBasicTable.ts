@@ -12,7 +12,7 @@ interface HandleDataTotalFunction {
 }
 
 interface BasicTableConfig {
-  service: false | Function // /@/api导出的函数
+  service: false | Function // @/api导出的函数
   handleTableData?: HandleTableDataFunction
   handleDataTotal?: HandleDataTotalFunction
   pagination: false | PaginationConfig

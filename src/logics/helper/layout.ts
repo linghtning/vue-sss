@@ -1,6 +1,6 @@
 import type { MenuItem, MenuTree } from '/#/store'
 
-import { router } from '/@/router'
+import { router } from '@/router'
 
 /**
  * 查找等于key值的节点的路径

@@ -1,4 +1,4 @@
-import { usePermissionStore } from '/@/store/modules/permission'
+import { usePermissionStore } from '@/store/modules/permission'
 
 export function checkPermission(permissions: string | string[]): boolean {
   const permissionStore = usePermissionStore()

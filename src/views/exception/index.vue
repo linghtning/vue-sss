@@ -21,7 +21,7 @@ function backHome() {
 </script>
 
 <template>
-  <div class="container exception-page">
+  <div class="mcontainer exception-page">
     <a-result :status="code" :title="code" :sub-title="exceptionTipMap[code]">
       <template #extra>
         <a-button type="primary" @click="backHome">
@@ -35,8 +35,8 @@ function backHome() {
 <style lang="less" scoped>
 .exception-page {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding-bottom: 5%;
 }
 </style>

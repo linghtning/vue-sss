@@ -1,6 +1,6 @@
 import type { LayoutSetting } from '/#/config'
 
-import { MenuModeEnum } from '/@/enums/layoutEnum'
+import { MenuModeEnum } from '@/enums/layoutEnum'
 import { menuTree } from './menuConfig'
 
 const setting: LayoutSetting = {

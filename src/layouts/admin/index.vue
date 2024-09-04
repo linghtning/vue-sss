@@ -4,13 +4,13 @@ import { UseFullscreen } from '@vueuse/components'
 import AliveRouterView from '../aliveRouterView/index.vue'
 import SiderMenu from './menu/SiderMenu/index.vue'
 import TopMenu from './menu/TopMenu/index.vue'
-import { useLayoutStore } from '/@/store/modules/layout'
-import { useUserStore } from '/@/store/modules/user'
-import { MenuModeEnum } from '/@/enums/layoutEnum'
-import { getEnv } from '/@/utils/env'
-import { generateMenuPath, goMenuFirstLeafNode } from '/@/logics/helper/layout'
-import { BasicPageEnum } from '/@/enums/pageEnum'
-import avatarImg from '/@/assets/images/layout/avatar.svg'
+import { useLayoutStore } from '@/store/modules/layout'
+import { useUserStore } from '@/store/modules/user'
+import { MenuModeEnum } from '@/enums/layoutEnum'
+import { getEnv } from '@/utils/env'
+import { generateMenuPath, goMenuFirstLeafNode } from '@/logics/helper/layout'
+import { BasicPageEnum } from '@/enums/pageEnum'
+import avatarImg from '@/assets/images/layout/avatar.svg'
 
 const router = useRouter()
 
@@ -149,7 +149,7 @@ onMounted(() => {
   <UseFullscreen v-slot="{ isFullscreen, toggle: toggleFullscreen }" class="fullscreen-wrapper">
     <div
       ref="adminLayoutRef"
-      class="container admin-layout"
+      class="mcontainer admin-layout"
       :class="{
         'mix-menu-mode': menuMode === MenuModeEnum.MIX,
         'side-menu-mode': menuMode === MenuModeEnum.SIDE,
@@ -224,7 +224,7 @@ onMounted(() => {
                 </div>
               </div>
             </div>
-            <div class="action-item" style="padding: 0px">
+            <div class="action-item" style="padding: 0">
               <a-dropdown :get-popup-container="() => adminLayoutEl">
                 <div class="user-action-box">
                   <img class="user-avatar" :src="avatarImg" alt="user-avatar">
@@ -304,15 +304,15 @@ onMounted(() => {
 
 .admin-layout {
   display: flex;
-  background-color: #ffffff;
+  background-color: #fff;
 
   .logo-area {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 96px;
-    flex: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 
     .logo {
@@ -322,13 +322,15 @@ onMounted(() => {
 
     .title-area {
       margin-left: 12px;
+
       .title {
         font-size: 20px;
-        color: #ffffff;
+        color: #fff;
       }
+
       .sub-title {
         font-size: 10px;
-        color: #ffffff;
+        color: #fff;
       }
     }
   }
@@ -354,19 +356,19 @@ onMounted(() => {
 
       .admin-layout-header {
         position: fixed;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         background-color: #001529;
 
         .logo-area {
           .title {
-            color: #eeeeee;
+            color: #eee;
           }
         }
 
         .global-action-area {
           .action-item {
-            color: #eeeeee;
+            color: #eee;
 
             &:hover {
               background-color: #252a3d;
@@ -378,15 +380,15 @@ onMounted(() => {
   }
 
   .admin-layout-aside {
-    width: @aside-width;
-    height: 100%;
-    flex: none;
-    display: flex;
-    flex-direction: column;
-    background-color: @aside-bg;
-    box-shadow: 2px 0px 8px rgba(29, 35, 41, 0.05);
     position: relative;
     z-index: 2;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    width: @aside-width;
+    height: 100%;
+    background-color: @aside-bg;
+    box-shadow: 2px 0 8px rgb(29 35 41 / 5%);
 
     &.collapsed {
       width: 80px;
@@ -397,52 +399,52 @@ onMounted(() => {
     }
 
     .side-menu-area {
-      width: 100%;
-      height: 0px;
-      flex: 1;
       display: flex;
+      flex: 1;
       flex-direction: column;
+      width: 100%;
+      height: 0;
 
       .side-menu-scroll-area {
-        width: 100%;
-        height: 0px;
         flex: 1;
+        width: 100%;
+        height: 0;
         overflow-y: auto;
       }
 
       .action-area {
+        display: flex;
+        flex: none;
+        align-items: center;
         width: 100%;
         height: 48px;
-        flex: none;
         padding: 16px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
         // border-top: 1px solid rgba(0, 0, 0, 0.06);
         font-size: 16px;
-        color: #ffffff;
+        color: #fff;
+        cursor: pointer;
       }
     }
   }
 
   .admin-layout-main {
-    width: 0px;
-    flex: 1;
-    height: 100%;
     position: relative;
     z-index: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
+    width: 0;
+    height: 100%;
 
     .admin-layout-header {
-      width: 100%;
-      height: 64px;
-      flex: none;
-      display: flex;
-      box-shadow: 0px 1px 4px rgba(0, 21, 41, 0.12);
-      padding-right: 16px;
       position: relative;
       z-index: 2;
+      display: flex;
+      flex: none;
+      width: 100%;
+      height: 64px;
+      padding-right: 16px;
+      box-shadow: 0 1px 4px rgb(0 21 41 / 12%);
 
       .logo-area {
         width: @aside-width;
@@ -450,28 +452,28 @@ onMounted(() => {
       }
 
       .top-menu-area {
-        width: 0px;
         flex: 1;
+        width: 0;
         height: 100%;
       }
 
       .breadcrumb {
-        height: 100%;
         display: flex;
         align-items: center;
+        height: 100%;
         margin-left: 16px;
       }
 
       .global-action-area {
+        display: flex;
         flex: none;
         height: 100%;
-        display: flex;
 
         .action-item {
-          height: 100%;
-          padding: 0px 12px;
           display: flex;
           align-items: center;
+          height: 100%;
+          padding: 0 12px;
           cursor: pointer;
           transition: all 0.3s;
 
@@ -480,8 +482,9 @@ onMounted(() => {
           }
 
           &.custom {
-            padding: 0px;
+            padding: 0;
             cursor: unset;
+
             &:hover {
               background-color: unset;
             }
@@ -494,17 +497,19 @@ onMounted(() => {
           .toolbar {
             display: flex;
             align-items: center;
+
             .item {
+              display: flex;
+              align-items: center;
+              justify-content: center;
               width: 40px;
               height: 40px;
-              border-radius: 50%;
-              cursor: pointer;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              transition: all 0.3s;
               font-size: 14px;
               color: #878a99;
+              cursor: pointer;
+              border-radius: 50%;
+              transition: all 0.3s;
+
               &:hover {
                 background-color: #f3f6f9;
               }
@@ -512,11 +517,11 @@ onMounted(() => {
           }
 
           .user-action-box {
-            height: 100%;
-            padding: 0px 12px;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0 12px;
 
             .user-avatar {
               width: 32px;
@@ -533,16 +538,16 @@ onMounted(() => {
     }
 
     .admin-layout-tabs {
-      width: 100%;
-      height: 32px;
-      flex: none;
-      display: flex;
       position: relative;
       z-index: 1;
+      display: flex;
+      flex: none;
+      width: 100%;
+      height: 32px;
 
       .tabs-area {
-        width: 0px;
         flex: 1;
+        width: 0;
         height: 100%;
 
         :deep {
@@ -556,7 +561,7 @@ onMounted(() => {
             }
 
             .ant-tabs-nav {
-              margin: 0px;
+              margin: 0;
 
               &::before {
                 border-bottom: none;
@@ -564,14 +569,14 @@ onMounted(() => {
 
               .ant-tabs-nav-operations {
                 .ant-tabs-nav-more {
-                  cursor: pointer;
-                  padding: 0px 15px; // 与按钮一致
                   display: flex;
                   align-items: center;
-                  background-color: #ffffff;
-                  border-left: 1px solid #dddddd;
-                  transition: all 0.3s;
+                  padding: 0 15px; // 与按钮一致
                   font-size: 18px;
+                  cursor: pointer;
+                  background-color: #fff;
+                  border-left: 1px solid #ddd;
+                  transition: all 0.3s;
 
                   &:hover {
                     color: #40a9ff;
@@ -581,10 +586,10 @@ onMounted(() => {
 
               .ant-tabs-extra-content {
                 .ant-btn {
-                  border: none;
-                  border-left: 1px solid #dddddd;
-                  border-radius: 0px;
                   width: 49px;
+                  border: none;
+                  border-left: 1px solid #ddd;
+                  border-radius: 0;
 
                   .anticon {
                     font-size: 14px;
@@ -607,10 +612,10 @@ onMounted(() => {
 
             .ant-tabs-tab {
               height: 100%;
-              padding: 0px 12px;
-              border: none;
-              background-color: #ffffff;
+              padding: 0 12px;
               color: unset;
+              background-color: #fff;
+              border: none;
 
               .ant-tabs-tab-btn {
                 color: unset;
@@ -627,7 +632,7 @@ onMounted(() => {
                 }
 
                 &:focus {
-                  color: rgba(0, 0, 0, 0.45);
+                  color: rgb(0 0 0 / 45%);
                 }
               }
 
@@ -637,8 +642,8 @@ onMounted(() => {
             }
 
             .ant-tabs-tab-active {
-              background-color: @page-bg-color;
               color: @primary-color;
+              background-color: @page-bg-color;
 
               &:hover {
                 background-color: @page-bg-color;
@@ -650,11 +655,11 @@ onMounted(() => {
     }
 
     .admin-layout-content {
-      width: 100%;
-      height: 0px;
-      flex: 1;
-      overflow: auto;
       position: relative;
+      flex: 1;
+      width: 100%;
+      height: 0;
+      overflow: auto;
     }
   }
 }

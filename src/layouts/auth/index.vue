@@ -1,14 +1,14 @@
 <script setup lang="ts" name="LAuth">
 import dayjs from 'dayjs'
 import AliveRouterView from '../aliveRouterView/index.vue'
-import { getEnv } from '/@/utils/env'
+import { getEnv } from '@/utils/env'
 
 const { VITE_APP_TITLE: systemTitle } = getEnv()
 const currentYear = dayjs().format('YYYY')
 </script>
 
 <template>
-  <div class="container auth-layout">
+  <div class="mcontainer auth-layout">
     <div class="main-content">
       <div class="welcome-box">
         <img class="logo" src="/src/assets/images/layout/logo.png" alt="logo">
@@ -46,13 +46,13 @@ const currentYear = dayjs().format('YYYY')
   background-size: cover;
 
   .main-content {
-    width: 100%;
-    height: 0px;
-    flex: 1;
-    padding: 0px 18%;
     display: flex;
-    justify-content: space-between;
+    flex: 1;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 0;
+    padding: 0 18%;
 
     .welcome-box {
       height: 377px;
@@ -65,23 +65,23 @@ const currentYear = dayjs().format('YYYY')
       .welcome-words,
       .system-title {
         font-size: 30px;
-        color: #ffffff;
         font-weight: bold;
+        color: #fff;
       }
     }
 
     .login-box {
       width: 410px;
       padding: 30px 40px;
+      background-color: rgb(255 255 255 / 10%);
       border-radius: 10px;
-      box-shadow: 0px 6px 12px 0px rgba(7, 17, 27, 0.06);
-      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 6px 12px 0 rgb(7 17 27 / 6%);
 
       .header-area {
-        width: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        width: 100%;
         margin-bottom: 20px;
 
         .logo {
@@ -91,21 +91,21 @@ const currentYear = dayjs().format('YYYY')
 
         .system-title {
           font-size: 26px;
-          color: #ffffff;
           font-weight: 600;
+          color: #fff;
         }
       }
     }
   }
 
   .footer {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 80px;
-    flex: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
+    color: #fff;
   }
 }
 </style>

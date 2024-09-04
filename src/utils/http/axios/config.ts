@@ -1,7 +1,7 @@
 import type { FullExpandRequestConfig, RequestOptions } from './types'
-import { getEnv } from '/@/utils/env'
+import { getEnv } from '@/utils/env'
 
-import { ContentTypeEnum } from '/@/enums/httpEnum'
+import { ContentTypeEnum } from '@/enums/httpEnum'
 
 export const defaultRequestOptions: Required<RequestOptions> = {
   // 请求是否需要登录鉴权

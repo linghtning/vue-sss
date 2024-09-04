@@ -1,10 +1,10 @@
 <script setup lang="ts" name="VSystemOrg">
-import TBLayout from '/@/views/common/TBLayout/index.vue'
-import DataPanel from '/@/views/common/DataPanel/index.vue'
-import BasicTable from '/@/components/BasicTable/index.vue'
-import TableQueryForm from '/@/components/TableQueryForm/index.vue'
-import { TableOperateButton, TableOperateGroup } from '/@/components/TableOperateButton'
-import { useBasicTable } from '/@/hooks/component/useBasicTable'
+import TBLayout from '@/views/common/TBLayout/index.vue'
+import DataPanel from '@/views/common/DataPanel/index.vue'
+import BasicTable from '@/components/BasicTable/index.vue'
+import TableQueryForm from '@/components/TableQueryForm/index.vue'
+import { TableOperateButton, TableOperateGroup } from '@/components/TableOperateButton'
+import { useBasicTable } from '@/hooks/component/useBasicTable'
 
 const { tableData, tableLoading, fetchTableData, paginationData, selectedRows, tableRowSelection }
   = useBasicTable({

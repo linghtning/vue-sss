@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { useUserStore } from '/@/store/modules/user'
-import { router } from '/@/router'
-import { ContentTypeEnum, RequestMethodEnum } from '/@/enums/httpEnum'
+import { useUserStore } from '@/store/modules/user'
+import { router } from '@/router'
+import { ContentTypeEnum, RequestMethodEnum } from '@/enums/httpEnum'
 import qs from 'qs'
-import { BasicPageEnum } from '/@/enums/pageEnum'
+import { BasicPageEnum } from '@/enums/pageEnum'
 
 import type { AxiosInstance } from 'axios'
 import { axiosRequestConfig } from './config'

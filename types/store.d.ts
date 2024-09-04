@@ -1,4 +1,4 @@
-import type { MenuModeEnum } from '/@/enums/layoutEnum'
+import type { MenuModeEnum } from '@/enums/layoutEnum'
 
 /* user module */
 export interface UserState {

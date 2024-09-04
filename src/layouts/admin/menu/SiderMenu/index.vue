@@ -1,8 +1,8 @@
 <script setup lang="ts" name="LSiderMenu">
 import TreeMenu from '../TreeMenu/index.vue'
-import { useLayoutStore } from '/@/store/modules/layout'
-import { MenuModeEnum } from '/@/enums/layoutEnum'
-import { handleGoFromMenuKey } from '/@/logics/helper/layout'
+import { useLayoutStore } from '@/store/modules/layout'
+import { MenuModeEnum } from '@/enums/layoutEnum'
+import { handleGoFromMenuKey } from '@/logics/helper/layout'
 
 const props = defineProps({
   collapsed: {

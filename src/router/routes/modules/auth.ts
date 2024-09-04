@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-import { asyncLayoutImport, asyncViewImport } from '/@/router/helper/asyncComponentImport'
+import { asyncLayoutImport, asyncViewImport } from '@/router/helper/asyncComponentImport'
 
 const auth: RouteRecordRaw = {
   path: '/auth',

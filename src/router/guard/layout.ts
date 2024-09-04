@@ -1,8 +1,8 @@
 import type { Router } from 'vue-router'
 
-import { BasicPageEnum } from '/@/enums/pageEnum'
-import { setPageTitle } from '/@/router/helper/routeHelper'
-import { useLayoutStore } from '/@/store/modules/layout'
+import { BasicPageEnum } from '@/enums/pageEnum'
+import { setPageTitle } from '@/router/helper/routeHelper'
+import { useLayoutStore } from '@/store/modules/layout'
 import NProgress from 'nprogress'
 
 export function createLayoutGuard(router: Router) {

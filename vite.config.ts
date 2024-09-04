@@ -64,6 +64,9 @@ export default defineConfig(({ command, mode }) => {
       port: viteEnv.VITE_PORT,
       proxy: viteEnv.VITE_PROXY_OPEN ? configProxy(viteEnv.VITE_PROXY) : {},
     },
+    define: {
+      'process.env.VITE_ENV': viteEnv,
+    },
     css: {
       preprocessorOptions: {
         less: {

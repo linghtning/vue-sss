@@ -1,6 +1,6 @@
 import type { ProjectSetting } from '/#/config'
 
-import { RoutePermissionModeEnum } from '/@/enums/appEnum'
+import { RoutePermissionModeEnum } from '@/enums/appEnum'
 
 const setting: ProjectSetting = {
   // 路由权限模式

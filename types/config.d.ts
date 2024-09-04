@@ -1,7 +1,7 @@
 import type { MenuTree } from '/#/store'
 
-import type { RoutePermissionModeEnum } from '/@/enums/appEnum'
-import type { MenuModeEnum } from '/@/enums/layoutEnum'
+import type { RoutePermissionModeEnum } from '@/enums/appEnum'
+import type { MenuModeEnum } from '@/enums/layoutEnum'
 
 export interface ProjectSetting {
   routePermissionMode: RoutePermissionModeEnum
