@@ -1,7 +1,7 @@
 import type { Router } from 'vue-router'
 
-import { useUserStore } from '@/store/modules/user'
-import { BasicPageEnum, ExceptionPageEnum } from '@/enums/pageEnum'
+import { useUserStore } from '/@/store/modules/user'
+import { BasicPageEnum, ExceptionPageEnum } from '/@/enums/pageEnum'
 
 export function createLocalPermissionGuard(router: Router) {
   router.beforeEach((to, from, next) => {

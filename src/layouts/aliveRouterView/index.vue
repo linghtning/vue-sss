@@ -1,8 +1,8 @@
 <script setup lang="ts" name="LAliveRouterView">
-import type { VNode } from 'vue'
+import type { Component, VNode } from 'vue'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
-import { useLayoutStore } from '@/store/modules/layout'
+import { useLayoutStore } from '/@/store/modules/layout'
 
 const routeCacheComponentMap = new Map()
 

@@ -6,9 +6,9 @@ import type { UserState } from '/#/store'
 export const useUserStore = defineStore({
   id: 'user',
   state: (): UserState => ({
-    isLogin: true,
-    userInfo: { name: '小橘猫' },
-    token: '123',
+    isLogin: false,
+    userInfo: null,
+    token: null,
   }),
   getters: {
     getUserInfo(state) {

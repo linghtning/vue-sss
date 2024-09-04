@@ -1,21 +1,22 @@
-import { defineStore } from 'pinia'
-import type { RouteLocationNormalized } from 'vue-router'
-import layoutSetting from '@/settings/layoutSetting'
-import { generateMenuKeyPath } from '@/logics/helper/layout'
-import { router } from '@/router'
-import { BasicPageEnum } from '@/enums/pageEnum'
-
 import type { LayoutState, TabInfo } from '/#/store'
+import type { RouteLocationNormalized } from 'vue-router'
+
+import { defineStore } from 'pinia'
+import layoutSetting from '/@/settings/layoutSetting'
+import { generateMenuPath } from '/@/logics/helper/layout'
+import { router } from '/@/router'
+import { BasicPageEnum } from '/@/enums/pageEnum'
 
 export const useLayoutStore = defineStore({
   id: 'layout',
   state: (): LayoutState => ({
     menuMode: layoutSetting.menuMode,
-    menuTree: [],
+    menuTree: layoutSetting.menuTree,
     selectedMenuKeyPath: [],
     pageTabs: [],
     currentTabIndex: -1,
     cachedRoutes: new Set(),
+    adminLayoutEl: null,
   }),
   getters: {
     currentTopMenuKey(state): string {
@@ -29,6 +30,9 @@ export const useLayoutStore = defineStore({
     },
   },
   actions: {
+    setAdminLayoutEl(el: any) {
+      this.adminLayoutEl = el || null
+    },
     refreshPage(route: RouteLocationNormalized) {
       if (route.meta.cache !== false) {
         this.clearRouteCache(route.fullPath)
@@ -50,7 +54,7 @@ export const useLayoutStore = defineStore({
       if (!matchKey) {
         matchKey = route.name
       }
-      const menuKeyPath = generateMenuKeyPath(this.menuTree, String(matchKey))
+      const { menuKeyPath } = generateMenuPath(this.menuTree, String(matchKey))
       this.selectedMenuKeyPath = menuKeyPath
     },
     updatePageTabs(route: RouteLocationNormalized) {

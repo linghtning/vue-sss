@@ -1,5 +1,10 @@
 import axios from 'axios'
+import { useUserStore } from '/@/store/modules/user'
+import { router } from '/@/router'
+import { ContentTypeEnum, RequestMethodEnum } from '/@/enums/httpEnum'
 import qs from 'qs'
+import { BasicPageEnum } from '/@/enums/pageEnum'
+
 import type { AxiosInstance } from 'axios'
 import { axiosRequestConfig } from './config'
 import type {
@@ -9,10 +14,6 @@ import type {
   RequestParams,
   UploadFileParams,
 } from './types'
-import { useUserStore } from '@/store/modules/user'
-import { router } from '@/router'
-import { ContentTypeEnum, RequestMethodEnum } from '@/enums/httpEnum'
-import { BasicPageEnum } from '@/enums/pageEnum'
 
 export class Requester {
   private axiosRequestConfig: FullExpandRequestConfig // 实例请求配置
@@ -43,7 +44,6 @@ export class Requester {
     const requestOptions: Required<RequestOptions> = response.config.requestOptions
     const handleCustomError = requestOptions.handleCustomError
 
-    // eslint-disable-next-line ts/no-unused-expressions
     handleCustomError
     && handleCustomError(response, {
       showErrorTip: requestOptions.showCustomErrorTip,
@@ -98,7 +98,7 @@ export class Requester {
         }
       },
       (error) => {
-        // const requestOptions = (error.response.config as FullExpandRequestConfig).requestOptions
+        const requestOptions = (error.response.config as FullExpandRequestConfig).requestOptions
 
         if (error.code === 'ECONNABORTED') {
           // 请求超时 重新发起请求

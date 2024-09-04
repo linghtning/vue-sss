@@ -1,6 +1,6 @@
 import type { App, Directive, DirectiveBinding } from 'vue'
 
-import { checkPermission } from '@/logics/helper/permission'
+import { checkPermission } from '/@/logics/helper/permission'
 
 const permissionDirective: Directive = function (
   el: HTMLElement,

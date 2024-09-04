@@ -3,7 +3,7 @@ import type { MenuTree } from '/#/store'
 
 import RecursiveMenuItem from '../RecursiveMenuItem/index.vue'
 
-defineProps({
+const props = defineProps({
   menuTree: {
     type: Object as PropType<MenuTree>,
     default: () => {
@@ -60,7 +60,7 @@ function onMenuClick(info: any) {
             <Icon :name="item.icon!.name" :type="item.icon!.type" />
           </template> -->
           <template #icon>
-            <Icon name="PieChartOutlined" />
+            <Icon type="ant" name="PieChartOutlined" />
           </template>
           <span>{{ item.title }}</span>
         </a-menu-item>
@@ -72,6 +72,12 @@ function onMenuClick(info: any) {
 <style lang="less" scoped>
 .tree-menu {
   width: 100%;
+
+  :deep {
+    .ant-menu {
+      font-size: 14px;
+    }
+  }
 
   &.horizontal-mode {
     height: 100%;

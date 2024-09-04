@@ -1,10 +1,10 @@
 import type { ProjectSetting } from '/#/config'
 
-import { RoutePermissionModeEnum } from '@/enums/appEnum'
+import { RoutePermissionModeEnum } from '/@/enums/appEnum'
 
 const setting: ProjectSetting = {
   // 路由权限模式
-  routePermissionMode: RoutePermissionModeEnum.LOCAL,
+  routePermissionMode: RoutePermissionModeEnum.SAFETY,
   // 网页标题后缀
   showPageTitleSuffix: true,
   // 使用IconFont的图标配置

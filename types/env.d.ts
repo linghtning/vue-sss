@@ -3,6 +3,7 @@
 interface ImportMetaEnv {
   // common
   readonly VITE_APP_TITLE: string
+  readonly VITE_APP_TITLE_EN: string
   readonly VITE_APP_ID: string
   // not common
   readonly VITE_PUBLIC_PATH: string

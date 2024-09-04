@@ -1,7 +1,7 @@
 <script lang="ts" setup name="VException">
 import { useRouter } from 'vue-router'
 
-defineProps({
+const props = defineProps({
   code: {
     type: Number,
     default: 404,
@@ -35,8 +35,8 @@ function backHome() {
 <style lang="less" scoped>
 .exception-page {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding-bottom: 5%;
 }
 </style>

@@ -1,16 +1,14 @@
-import '@/design/index.less'
+import '/@/design/index.less'
 
 import 'virtual:svg-icons-register'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import { setupStore } from '@/store'
-import { setupRouter } from '@/router'
-import { registerGlobComp } from '@/components/registerGlobComp'
-import { setupGlobDirectives } from '@/directives'
-import { setupLibrary } from '@/logics/setupLibrary'
-
-import 'virtual:uno.css' // uno.css
+import { setupStore } from '/@/store'
+import { setupRouter } from '/@/router'
+import { registerGlobComp } from '/@/components/registerGlobComp'
+import { setupGlobDirectives } from '/@/directives'
+import { setupLibrary } from '/@/logics/setupLibrary'
 
 function bootstrap() {
   const app = createApp(App)
@@ -23,7 +21,7 @@ function bootstrap() {
 
   setupGlobDirectives(app)
 
-  setupLibrary()
+  setupLibrary(app)
 
   app.mount('#app')
 }

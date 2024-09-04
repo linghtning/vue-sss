@@ -9,8 +9,9 @@ import { defineConfig, loadEnv } from 'vite'
 import { configViteBuild } from './build/build'
 import { createVitePlugin } from './build/plugins'
 import usePostCss from './build/postcss'
-import useProxy from './build/proxy'
+import { configProxy } from './build/proxy'
 import { wrapperEnv } from './build/utils'
+import { FILES_USE_GLOBAL_THEME_VAR } from './build/constant'
 
 export default defineConfig(({ command, mode }) => {
   const isBuild = command === 'build'
@@ -61,18 +62,21 @@ export default defineConfig(({ command, mode }) => {
       hmr: true,
       cors: true,
       port: viteEnv.VITE_PORT,
-      proxy: viteEnv.VITE_PROXY_OPEN ? useProxy(viteEnv.VITE_PROXY) : {},
+      proxy: viteEnv.VITE_PROXY_OPEN ? configProxy(viteEnv.VITE_PROXY) : {},
     },
     css: {
       preprocessorOptions: {
-        // 全局样式变量预注入
-        // scss: {
-        //   additionalData: `@use "./src/styles/variables.scss" as *;
-        //                    @use "./src/styles/mixin.scss" as *;`,
-        //   javascriptEnabled: true,
-        // },
         less: {
           javascriptEnabled: true,
+          additionalData: (content: string, filePath: string) => {
+            const path = FILES_USE_GLOBAL_THEME_VAR.find((item: string) => {
+              return filePath.includes(item)
+            })
+            if (path) {
+              return `@import '@/design/theme/default/global.less';${content}`
+            }
+            return content
+          },
         },
       },
       postcss: usePostCss(),

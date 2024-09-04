@@ -1,10 +1,10 @@
 <script setup lang="ts" name="LSiderMenu">
 import TreeMenu from '../TreeMenu/index.vue'
-import { useLayoutStore } from '@/store/modules/layout'
-import { MenuModeEnum } from '@/enums/layoutEnum'
-import { handleGoFromMenuKey } from '@/logics/helper/layout'
+import { useLayoutStore } from '/@/store/modules/layout'
+import { MenuModeEnum } from '/@/enums/layoutEnum'
+import { handleGoFromMenuKey } from '/@/logics/helper/layout'
 
-defineProps({
+const props = defineProps({
   collapsed: {
     type: Boolean,
     default: false,
@@ -20,7 +20,6 @@ const menuTree = layoutStore.menuTree
 const { menuMode, currentTopMenuKey, selectedMenuKey, selectedMenuKeyPath }
   = storeToRefs(layoutStore)
 
-// eslint-disable-next-line vue/return-in-computed-property
 const showMenuTree = computed(() => {
   if (menuMode.value === MenuModeEnum.SIDE) {
     return menuTree
@@ -49,7 +48,6 @@ const openKeys = computed(() => {
   return dirKeyPath
 })
 
-// eslint-disable-next-line unused-imports/no-unused-vars
 function onMenuClick({ item, key, keyPath }: any) {
   handleGoFromMenuKey(key)
 }
@@ -75,7 +73,7 @@ watch(
     <TreeMenu
       :menu-tree="showMenuTree"
       mode="inline"
-      theme="light"
+      theme="dark"
       :selected-keys="selectedKeys"
       :open-keys="openKeys"
       :inline-collapsed="collapsed"
@@ -89,13 +87,13 @@ watch(
   width: 100%;
 
   :deep {
-    .ant-menu {
-      border-right-color: #fff;
-    }
+    // .ant-menu {
+    //   border-right-color: #ffffff;
+    // }
 
-    .ant-menu-sub.ant-menu-inline {
-      background: #fff;
-    }
+    // .ant-menu-sub.ant-menu-inline {
+    //   background: #ffffff;
+    // }
 
     .ant-menu-vertical {
       border-right: none;

@@ -1,9 +1,9 @@
 <script setup lang="ts" name="LTopMenu">
 import TreeMenu from '../TreeMenu/index.vue'
-import { useLayoutStore } from '@/store/modules/layout'
-import { MenuModeEnum } from '@/enums/layoutEnum'
-import { goMenuFirstLeafNode, handleGoFromMenuKey } from '@/logics/helper/layout'
-import layoutSetting from '@/settings/layoutSetting'
+import { useLayoutStore } from '/@/store/modules/layout'
+import { MenuModeEnum } from '/@/enums/layoutEnum'
+import { goMenuFirstLeafNode, handleGoFromMenuKey } from '/@/logics/helper/layout'
+import layoutSetting from '/@/settings/layoutSetting'
 
 import type { MenuTree } from '/#/store'
 
@@ -13,7 +13,6 @@ const menuTree = layoutStore.menuTree
 
 const { menuMode, currentTopMenuKey, selectedMenuKey } = storeToRefs(layoutStore)
 
-// eslint-disable-next-line vue/return-in-computed-property
 const showMenuTree = computed(() => {
   if (menuMode.value === MenuModeEnum.TOP) {
     return menuTree
@@ -54,7 +53,6 @@ const theme = computed(() => {
   return menuMode.value === MenuModeEnum.MIX ? 'dark' : 'light'
 })
 
-// eslint-disable-next-line unused-imports/no-unused-vars
 function onMenuClick({ item, key, keyPath }: any) {
   if (menuMode.value === MenuModeEnum.TOP) {
     handleGoFromMenuKey(key)

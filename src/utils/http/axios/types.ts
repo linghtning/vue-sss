@@ -1,6 +1,6 @@
 import type { AxiosRequestConfig } from 'axios'
 
-import type { ContentTypeEnum, RequestMethodEnum } from '@/enums/httpEnum'
+import type { ContentTypeEnum, RequestMethodEnum } from '/@/enums/httpEnum'
 
 export interface RequestOptions {
   auth?: boolean

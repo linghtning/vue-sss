@@ -1,11 +1,10 @@
 import type { RouteLocationNormalized, Router } from 'vue-router'
 
-import { useUserStore } from '@/store/modules/user'
-import { usePermissionStoreWithOut } from '@/store/modules/permission'
-import { BasicPageEnum, ExceptionPageEnum } from '@/enums/pageEnum'
-import { getPermissionData } from '@/api/auth'
-import { getMenuFirstLeafNode } from '@/logics/helper/layout'
-import { useLayoutStore } from '@/store/modules/layout'
+import { useUserStore } from '/@/store/modules/user'
+import { usePermissionStoreWithOut } from '/@/store/modules/permission'
+import { BasicPageEnum, ExceptionPageEnum } from '/@/enums/pageEnum'
+import { getMenuFirstLeafNode } from '/@/logics/helper/layout'
+import { useLayoutStore } from '/@/store/modules/layout'
 
 const permissionStore = usePermissionStoreWithOut()
 
@@ -33,21 +32,25 @@ export function createSafetyPermissionGuard(router: Router) {
     }
 
     const userStore = useUserStore()
-    const isLogin = userStore.isLogin
+    // const isLogin = userStore.isLogin;
+    const isLogin = true
     if (isLogin) {
       if (!permissionStore.hasFetchedPermissionData) {
-        getPermissionData()
-          // eslint-disable-next-line unused-imports/no-unused-vars
-          .then((res) => {
-            permissionStore.routePermissions = ['xxx']
-            permissionStore.hasFetchedPermissionData = true
+        permissionStore.routePermissions = ['xxx']
+        permissionStore.hasFetchedPermissionData = true
 
-            next(to)
-          })
-          .catch(() => {
-            const error = new Error('获取权限失败')
-            next(error)
-          })
+        next(to)
+        // getPermissionData()
+        //   .then((res) => {
+        //     permissionStore.routePermissions = ['xxx'];
+        //     permissionStore.hasFetchedPermissionData = true;
+
+        //     next(to);
+        //   })
+        //   .catch(() => {
+        //     const error = new Error('获取权限失败');
+        //     next(error);
+        //   });
       }
       else {
         if (to.path === '/') {
@@ -66,7 +69,8 @@ export function createSafetyPermissionGuard(router: Router) {
           next('/')
         }
         else {
-          if (!checkRoutePermission(to)) {
+          // if (!checkRoutePermission(to)) {
+          if (false) {
             const error = new Error('没有访问权限')
             next(error)
           }
@@ -91,7 +95,7 @@ export function createSafetyPermissionGuard(router: Router) {
     }
   })
 
-  router.onError(() => {
+  router.onError((error) => {
     router.push(ExceptionPageEnum.EXCEPTION_403)
   })
 }

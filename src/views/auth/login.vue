@@ -24,14 +24,12 @@ function handleSubmit() {
 
 function handleLogin() {}
 
-// eslint-disable-next-line unused-imports/no-unused-vars
 function handleLoginSuccess() {
   const backUrl = route.query.back_url
   const redirectUrl = backUrl ? decodeURIComponent(String(backUrl)) : '/'
   router.push(redirectUrl)
 }
 
-// eslint-disable-next-line unused-imports/no-unused-vars
 function handleLoginFail() {}
 </script>
 

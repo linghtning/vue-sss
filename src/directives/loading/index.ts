@@ -5,7 +5,7 @@ import loadingImg from './assets/loading.gif'
 const loadingDirective: Directive = function (el: HTMLElement, binding: DirectiveBinding<boolean>) {
   if (binding.value !== binding.oldValue) {
     const style = window.getComputedStyle(el)
-    if (style.position === 'static') {
+    if (style.position == 'static') {
       el.style.position = 'relative'
     }
     if (binding.value) {

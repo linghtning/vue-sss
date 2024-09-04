@@ -3,7 +3,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import type { PluginOption } from 'vite'
 
 import { configVueDevToolsPlugin } from './devTools'
-import { configMockPlugin } from './mock'
+// import { configMockPlugin } from './mock'
 import { configSvgLoaderPlugin } from './svgLoader'
 import { configUnocssPlugin } from './unocss'
 import { configVisualizePlugin } from './visualizer'
@@ -14,6 +14,7 @@ import { configAutoImportPlugin } from './autoImport'
 import { configAutoComponentPlugin } from './component'
 
 export function createVitePlugin(isBuild: boolean, _: any) {
+  // 基础配置
   const plugins: PluginOption[] = [
     vue(),
     vueJsx(),
@@ -27,7 +28,7 @@ export function createVitePlugin(isBuild: boolean, _: any) {
   ]
 
   // 启用mock
-  plugins.push(configMockPlugin(true))
+  // plugins.push(configMockPlugin(true))
 
   if (isBuild) {
     plugins.push(

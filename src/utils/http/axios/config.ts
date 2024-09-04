@@ -1,7 +1,7 @@
 import type { FullExpandRequestConfig, RequestOptions } from './types'
-import { getEnv } from '@/utils/env'
+import { getEnv } from '/@/utils/env'
 
-import { ContentTypeEnum } from '@/enums/httpEnum'
+import { ContentTypeEnum } from '/@/enums/httpEnum'
 
 export const defaultRequestOptions: Required<RequestOptions> = {
   // 请求是否需要登录鉴权
@@ -14,12 +14,10 @@ export const defaultRequestOptions: Required<RequestOptions> = {
   authHeader: 'Authorization',
   // 根据响应数据中的“自定义状态码”判断是resolve还是reject Promise
   // 如果validateCustomStatus返回true，则Promise将会resolved，否则是rejected
-  // eslint-disable-next-line unused-imports/no-unused-vars
   validateCustomStatus(response) {
     return true
   },
   // 处理自定义错误 validateCustomStatus返回false时执行
-  // eslint-disable-next-line unused-imports/no-unused-vars
   handleCustomError(response) {},
   // 显示自定义错误提示
   showCustomErrorTip: true,

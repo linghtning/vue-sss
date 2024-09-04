@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-import { asyncViewImport } from '@/router/helper/asyncComponentImport'
+import { asyncViewImport } from '/@/router/helper/asyncComponentImport'
 
 const exception: RouteRecordRaw[] = [
   {

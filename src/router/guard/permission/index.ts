@@ -2,8 +2,8 @@ import type { Router } from 'vue-router'
 
 import { createLocalPermissionGuard } from './local'
 import { createSafetyPermissionGuard } from './safety'
-import projectSetting from '@/settings/projectSetting'
-import { RoutePermissionModeEnum } from '@/enums/appEnum'
+import projectSetting from '/@/settings/projectSetting'
+import { RoutePermissionModeEnum } from '/@/enums/appEnum'
 
 export function createPermissionGuard(router: Router) {
   const { routePermissionMode } = projectSetting

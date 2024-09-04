@@ -11,15 +11,15 @@ Object.keys(modules).forEach((key) => {
   routeRecordList.push(...modList)
 })
 
-// const rootRoute: RouteRecordRaw = {
-//   path: '/',
-//   name: 'root',
-//   meta: {
-//     title: 'Root',
-//     public: false,
-//   },
-//   component: {},
-// }
+const rootRoute: RouteRecordRaw = {
+  path: '/',
+  name: 'root',
+  meta: {
+    title: 'Root',
+    public: false,
+  },
+  component: {},
+}
 
 const refreshRoute: RouteRecordRaw = {
   path: '/refresh',
@@ -31,5 +31,4 @@ const refreshRoute: RouteRecordRaw = {
   component: {},
 }
 
-// export default [rootRoute, refreshRoute, ...routeRecordList]
-export default [refreshRoute, ...routeRecordList]
+export default [rootRoute, refreshRoute, ...routeRecordList]

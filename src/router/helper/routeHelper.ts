@@ -1,6 +1,6 @@
+import projectSetting from '/@/settings/projectSetting'
 import { setDocTitle } from '../../utils/domUtils'
-import projectSetting from '@/settings/projectSetting'
-import { getEnv } from '@/utils/env'
+import { getEnv } from '/@/utils/env'
 
 /**
  * 相对url转化为路由记录name

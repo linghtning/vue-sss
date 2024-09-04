@@ -8,7 +8,7 @@ function createRequester(options: RequestOptions = {}) {
 }
 
 export const httpRequester = createRequester({
-  validateCustomStatus: () => {
+  validateCustomStatus: (response) => {
     return true
   },
   handleCustomError(response) {

@@ -1,4 +1,4 @@
-import type { MenuModeEnum } from '@/enums/layoutEnum'
+import type { MenuModeEnum } from '/@/enums/layoutEnum'
 
 /* user module */
 export interface UserState {
@@ -25,6 +25,7 @@ export interface LayoutState {
   pageTabs: TabInfo[]
   currentTabIndex: number
   cachedRoutes: Set<string>
+  adminLayoutEl: Nullable<Element>
 }
 
 export interface TabInfo {
